@@ -1,5 +1,6 @@
----
-layout: default
----
+{% assign parts = content | split:'</p>' %}
+{% for p in parts %}
+  {{ p }}</p>
+  {% if forloop.index == 2 %}{% include inject_ads.html %}{% endif %}
+{% endfor %}
 
-{{ content }}
